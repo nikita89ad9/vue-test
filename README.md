@@ -1,83 +1,64 @@
 
+# Vue 3 Application Template
 
-## Config
-
-To enable both eslint and prettier on file save, add the following to your settings.json vscode file:
-
-```json
-{
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.formatOnSave": true
-}
-```
+## Prerequisites:
 
 
+-   [Node.js](https://nodejs.org/)  >= 18
 
-## Front-End Stack
+## Setup and Development Flow:
 
-- **Main Technologies**
 
-  - TS
+1.  Install dependencies  `npm install`
+2.  Prepare  [Husky](https://typicode.github.io/husky/)  for git hooks  `npm run prepare`
+3.  Create  `.env.local`  for local development and define `tip-tap` token
+4.  Start the development server  `npm run dev`
+6.  Build the application  `npm run build`
 
-  - Vue.JS (3.x)
+## Technical Stack:
 
-  - Pinia
+-   [Vue 3](https://vuejs.org/)
+-   [Vite](https://vitejs.dev/guide/)
 
-- **Bundler**
+## Package Managers:
 
-  - Vite
+[](https://github.com/asinnws/vue3-feature-sliced-starter#package-managers)
 
-- **Testing**
-  - Vue Test Utils
-  - Vitest
-- **Containerization**
-  - Docker
-- **Linters**
+-   npm
 
-  - ESLint
+## Code Quality:
 
-  - Prettier
+-   [ESLint](https://eslint.org/)
+-   [Stylelint](https://stylelint.io/user-guide/get-started)
+-   Git hooks ([Husky](https://typicode.github.io/husky/))
+-   [Prettier](https://prettier.io/)
 
-  - Stylelint
+## Commands
 
-## How to run
+`npm install`
 
-### Running locally
+Installs dependencies
 
-> **ATTENTION! To use this app you must change license token in _.npmrc_ for TIP-TAP on one you own! More info -- https://tiptap.dev/**
+`npm run dev`
 
-#### Installing dependencies
+Starts local dev server at the port specified in  [vite config](https://github.com/asinnws/vue3-feature-sliced-starter/blob/main/vite.config.ts)
 
-    npm install
+`npm run build`
 
-#### Compile and Hot-Reload for Development
+Builds the project
 
-    npm run dev
+`npm run preview`
 
-#### Type-Check, Compile and Minify for Production
+Starts local server to serve  `dist`  folder on the specified port
 
-    npm run build
+`npm run format`
 
-#### Run Unit Tests with [Vitest](https://vitest.dev/)
+Formats the codebase using Prettier
 
-    npm run test:unit
+`docker compose up`
 
-#### Lint with [ESLint](https://eslint.org/)
+Builds docker container
 
-    npm run lint:fix
+`npm compose down`
 
-### Running from container
-
-> **ATTENTION! To use this app you must change license token in _Dockerfile_ for TIP-TAP on one you own! More info -- https://tiptap.dev/**
-
-    docker compose up
-
-### In detached mode
-
-     docker compose up -d
+Destroys docker container
